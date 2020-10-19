@@ -48,6 +48,7 @@ Future loadConfig() async {
 }
 
 ThemeMode getSystemTheme() {
+  final theme = await loadConfig();
   print(loadConfig());
   if ("dark" == "dark") {
     print("DARK");
