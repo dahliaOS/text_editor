@@ -5,8 +5,8 @@
 <a href="https://paypal.me/officialdahliaos">Donate</a> ●
 <a href="https://github.com/dahlia-os/documentation">Documentation</a>
 
-# text_editor
-Text is a simple, efficient and lightweight rich text editor for dahliaOS and other Flutter compatible systems. 
+# Text editor
+- Simple, efficient and lightweight rich text editor for dahliaOS and other Flutter compatible systems
 
 ## Contribute
 
