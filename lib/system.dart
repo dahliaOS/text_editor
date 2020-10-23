@@ -38,7 +38,7 @@ Future<String> _loadConfigAsset() async {
       .readAsStringSync();
 }
 
-Future loadConfig() async {
+Future<String> loadConfig() async {
   String jsonString = await _loadConfigAsset();
   final jsonResponse = json.decode(jsonString);
   Configuration config = new Configuration.fromJson(jsonResponse);
@@ -47,10 +47,10 @@ Future loadConfig() async {
   return value;
 }
 
-ThemeMode getSystemTheme() {
+Future<ThemeMode> getSystemTheme() async {
   final theme = await loadConfig();
   print(loadConfig());
-  if ("dark" == "dark") {
+  if (theme == "dark") {
     print("DARK");
     return ThemeMode.dark;
   } else {
