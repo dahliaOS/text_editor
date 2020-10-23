@@ -15,12 +15,13 @@ import 'package:flutter/material.dart';
 import 'system.dart';
 import 'dart:io';
 
-void main() {
+var defaultTheme;
+
+void main() async {
   loadConfig();
+  defaultTheme = await getSystemTheme();
   runApp(TextEditorApp());
 }
-
-var defaultTheme = getSystemTheme();
 
 class TextEditorApp extends StatelessWidget {
   @override
