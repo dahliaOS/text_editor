@@ -65,7 +65,7 @@ class TextEditorApp extends StatelessWidget {
 }
 
 class TextEditorHomePage extends StatefulWidget {
-  TextEditorHomePage({Key key}) : super(key: key);
+  TextEditorHomePage({Key? key}) : super(key: key);
   @override
   _TextEditorHomePageState createState() => new _TextEditorHomePageState();
 }
