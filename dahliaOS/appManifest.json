@@ -1,0 +1,10 @@
+{
+      "id": "io.dahliaos.text_editor",
+      "altName": "text_editor",
+      "realName": "Text Editor",
+      "version": "dahliaOS-latest",
+      "description": "View and edit documents",
+      "sourceCode": "https://github.com/dahliaOS/text_editor",
+      "hash": "DAP_AUTOMATION_PKGHASH",
+      "architecture": "x86_64"
+},
