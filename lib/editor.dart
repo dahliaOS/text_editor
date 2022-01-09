@@ -12,6 +12,8 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
+import 'package:text_editor/widgets/tool_icon_button.dart';
+import 'package:text_editor/widgets/tool_text_button.dart';
 
 extension CustomColorScheme on ColorScheme {
   Color get foregroundText => brightness == Brightness.light
@@ -61,7 +63,7 @@ class TextEditorApp extends StatelessWidget {
       initialRoute: '/second',
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
-        '/': (context) => TextEditorHomePage(),
+        '/': (context) => const TextEditorHomePage(),
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/second': (context) => SecondScreen(),
       },
@@ -70,7 +72,7 @@ class TextEditorApp extends StatelessWidget {
 }
 
 class TextEditorHomePage extends StatefulWidget {
-  TextEditorHomePage({Key? key}) : super(key: key);
+  const TextEditorHomePage({Key? key}) : super(key: key);
 
   @override
   _TextEditorHomePageState createState() => _TextEditorHomePageState();
@@ -146,280 +148,109 @@ class SecondScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Icon(
-                        Icons.undo,
-                        size: 25,
-                        color: Theme.of(context).colorScheme.barIconColor,
-                      ),
-                    ),
+                  const ToolIconButton(
+                    icon: Icons.undo,
+                    tooltip: 'Undo',
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Icon(
-                        Icons.redo,
-                        size: 25,
-                        color: Theme.of(context).colorScheme.barIconColor,
-                      ),
-                    ),
+                  const ToolIconButton(
+                    icon: Icons.redo,
+                    tooltip: 'Redo',
                   ),
                   VerticalDivider(
                     endIndent: 10,
                     indent: 10,
                     color: Theme.of(context).colorScheme.barIconColor,
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Icon(
-                        Icons.format_bold,
-                        size: 25,
-                        color: Theme.of(context).colorScheme.barIconColor,
-                      ),
-                    ),
+                  const ToolIconButton(
+                    icon: Icons.format_bold,
+                    tooltip: 'Bold',
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Icon(
-                        Icons.strikethrough_s,
-                        size: 25,
-                        color: Theme.of(context).colorScheme.barIconColor,
-                      ),
-                    ),
+                  const ToolIconButton(
+                    icon: Icons.strikethrough_s,
+                    tooltip: 'Strike Through',
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Icon(
-                        Icons.format_underlined,
-                        size: 25,
-                        color: Theme.of(context).colorScheme.barIconColor,
-                      ),
-                    ),
+                  const ToolIconButton(
+                    icon: Icons.format_underlined,
+                    tooltip: 'Underline',
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Icon(
-                        Icons.format_italic,
-                        size: 25,
-                        color: Theme.of(context).colorScheme.barIconColor,
-                      ),
-                    ),
+                  const ToolIconButton(
+                    icon: Icons.format_italic,
+                    tooltip: 'Italic',
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Icon(
-                        Icons.format_quote,
-                        size: 25,
-                        color: Theme.of(context).colorScheme.barIconColor,
-                      ),
-                    ),
+                  const ToolIconButton(
+                    icon: Icons.format_quote,
+                    tooltip: 'Quote',
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Icon(
-                        Icons.code,
-                        size: 25,
-                        color: Theme.of(context).colorScheme.barIconColor,
-                      ),
-                    ),
+                  const ToolIconButton(
+                    icon: Icons.code,
+                    tooltip: 'Code',
                   ),
                   VerticalDivider(
                     endIndent: 10,
                     indent: 10,
                     color: Theme.of(context).colorScheme.barIconColor,
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Text(
-                        "H1",
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          color: Theme.of(context).colorScheme.barIconColor,
-                          fontWeight: FontWeight.w800,
-                          fontFamily: "Roboto",
-                        ),
-                      ),
-                    ),
+                  const ToolTextButton(
+                    text: "H1",
+                    tooltip: "Headline1",
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Text(
-                        "H2",
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          color: Theme.of(context).colorScheme.barIconColor,
-                          fontWeight: FontWeight.w800,
-                          fontFamily: "Roboto",
-                        ),
-                      ),
-                    ),
+                  const ToolTextButton(
+                    text: "H2",
+                    tooltip: "Headline2",
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Text(
-                        "H3",
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          color: Theme.of(context).colorScheme.barIconColor,
-                          fontWeight: FontWeight.w800,
-                          fontFamily: "Roboto",
-                        ),
-                      ),
-                    ),
+                  const ToolTextButton(
+                    text: "H3",
+                    tooltip: "Headline3",
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Text(
-                        "H4",
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          color: Theme.of(context).colorScheme.barIconColor,
-                          fontWeight: FontWeight.w800,
-                          fontFamily: "Roboto",
-                        ),
-                      ),
-                    ),
+                  const ToolTextButton(
+                    text: "H4",
+                    tooltip: "Headline4",
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Text(
-                        "H5",
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          color: Theme.of(context).colorScheme.barIconColor,
-                          fontWeight: FontWeight.w800,
-                          fontFamily: "Roboto",
-                        ),
-                      ),
-                    ),
+                  const ToolTextButton(
+                    text: "H5",
+                    tooltip: "Headline5",
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Text(
-                        "H6",
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          color: Theme.of(context).colorScheme.barIconColor,
-                          fontWeight: FontWeight.w800,
-                          fontFamily: "Roboto",
-                        ),
-                      ),
-                    ),
+                  const ToolTextButton(
+                    text: "H6",
+                    tooltip: "Headline6",
                   ),
                   VerticalDivider(
                     endIndent: 10,
                     indent: 10,
                     color: Theme.of(context).colorScheme.barIconColor,
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Icon(
-                        Icons.format_list_bulleted,
-                        size: 25,
-                        color: Theme.of(context).colorScheme.barIconColor,
-                      ),
-                    ),
+                  const ToolIconButton(
+                    icon: Icons.format_list_bulleted,
+                    tooltip: 'Bullet List',
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Icon(
-                        Icons.format_list_numbered,
-                        size: 25,
-                        color: Theme.of(context).colorScheme.barIconColor,
-                      ),
-                    ),
+                  const ToolIconButton(
+                    icon: Icons.format_list_numbered,
+                    tooltip: 'Number List',
                   ),
                   VerticalDivider(
                     endIndent: 10,
                     indent: 10,
                     color: Theme.of(context).colorScheme.barIconColor,
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Icon(
-                        Icons.link,
-                        size: 25,
-                        color: Theme.of(context).colorScheme.barIconColor,
-                      ),
-                    ),
+                  const ToolIconButton(
+                    icon: Icons.link,
+                    tooltip: 'Link',
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Icon(
-                        Icons.image,
-                        size: 25,
-                        color: Theme.of(context).colorScheme.barIconColor,
-                      ),
-                    ),
+                  const ToolIconButton(
+                    icon: Icons.image,
+                    tooltip: 'Image',
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Icon(
-                        Icons.table_chart,
-                        size: 25,
-                        color: Theme.of(context).colorScheme.barIconColor,
-                      ),
-                    ),
+                  const ToolIconButton(
+                    icon: Icons.table_chart,
+                    tooltip: 'Table Chart',
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Icon(
-                        Icons.insert_emoticon,
-                        size: 25,
-                        color: Theme.of(context).colorScheme.barIconColor,
-                      ),
-                    ),
+                  const ToolIconButton(
+                    icon: Icons.insert_emoticon,
+                    tooltip: 'Emoticon',
                   ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: Icon(
-                        Icons.functions,
-                        size: 25,
-                        color: Theme.of(context).colorScheme.barIconColor,
-                      ),
-                    ),
+                  const ToolIconButton(
+                    icon: Icons.functions,
+                    tooltip: 'Functions',
                   ),
                 ],
               ),
@@ -427,7 +258,6 @@ class SecondScreen extends StatelessWidget {
           ),
           Expanded(
             child: SingleChildScrollView(
-              scrollDirection: Axis.vertical,
               child: Container(
                 margin: const EdgeInsets.all(25.0),
                 width: 900,
