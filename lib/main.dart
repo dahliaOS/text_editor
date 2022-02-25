@@ -15,5 +15,5 @@ import 'package:flutter/material.dart';
 import 'editor.dart';
 
 void main() {
-  runApp(TextEditorApp());
+  runApp(const TextEditorApp());
 }

@@ -11,6 +11,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:text_editor/widgets/tool_icon_button.dart';
 import 'package:text_editor/widgets/tool_text_button.dart';
@@ -34,6 +35,8 @@ extension CustomColorScheme on ColorScheme {
 }
 
 class TextEditorApp extends StatelessWidget {
+  const TextEditorApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -65,7 +68,7 @@ class TextEditorApp extends StatelessWidget {
         // When navigating to the "/" route, build the FirstScreen widget.
         '/': (context) => const TextEditorHomePage(),
         // When navigating to the "/second" route, build the SecondScreen widget.
-        '/second': (context) => SecondScreen(),
+        '/second': (context) => const SecondScreen(),
       },
     );
   }
@@ -99,6 +102,8 @@ class _TextEditorHomePageState extends State<TextEditorHomePage> {
 }
 
 class SecondScreen extends StatelessWidget {
+  const SecondScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -272,7 +277,9 @@ class SecondScreen extends StatelessWidget {
                     ),
                     child: TextFormField(
                       onChanged: (text) {
-                        print("First text field: $text");
+                        if (kDebugMode) {
+                          print("First text field: $text");
+                        }
                       },
                       style: TextStyle(
                         fontSize: 15.0,
